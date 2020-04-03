@@ -1,4 +1,8 @@
 class Solution:
+    '''
+        Given a string, find the length of the longest substring without repeating characters.
+    '''
+    # Sliding Window with hashmap approach
     def lengthOfLongestSubstring(self, s: str) -> int:
         if len(s) == 0 or len(s) == 1 :
             return len(s)
@@ -18,3 +22,5 @@ class Solution:
                 del hash_map[s[start_window]]
                 start_window+=1
         return max_window_len
+    
+    
