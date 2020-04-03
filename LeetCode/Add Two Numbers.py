@@ -10,7 +10,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 '''
 
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def addTwoNumbers_1(self, l1: ListNode, l2: ListNode) -> ListNode:
         num1 = ""
         num2 = ""
         while(l1!=None) :
@@ -29,5 +29,22 @@ class Solution:
         for char in num3:
             start.next = ListNode(int(char))
             start = start.next
+            
+        return head.next
+   
+        
+    
+    def addTwoNumbers_2(self, l1: ListNode, l2: ListNode) -> ListNode:
+        head = ListNode(0)
+        start = head
+        carry=0
+        while l1 or l2 or carry:
+            num1 = (l1.val if l1 else 0)
+            num2 = (l2.val if l2 else 0)
+            carry,num = divmod(num1+num2+carry,10)
+            start.next = ListNode(num)
+            start = start.next
+            l1=(l1.next if l1 else 0)
+            l2=(l2.next if l2 else 0)
             
         return head.next
