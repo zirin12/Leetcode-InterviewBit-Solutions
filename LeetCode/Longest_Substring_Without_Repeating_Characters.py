@@ -23,4 +23,18 @@ class Solution:
                 start_window+=1
         return max_window_len
     
+    # Optimized sliding window where we skip characters 
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        max_window_len = 0
+        start_window = 0
+        end_window = 0
+        input_length = len(s)
+        hash_map = {}
+        while end_window < input_length:
+            if s[end_window] in hash_map.keys():
+                start_window = max(start_window,hash_map[s[end_window]])
+            max_window_len = max(max_window_len,end_window-start_window+1)
+            hash_map[s[end_window]] = end_window+1
+            end_window+=1
+        return max_window_len
     
