@@ -22,8 +22,8 @@ class Solution:
 	                direction[3]=1
                 else :
 	               row-=1
-            if direction[1] :
-                if row==m-1:
+            	if direction[1] :
+                    if row==m-1:
 	                direction[1]=0
 	                direction[2]=1
                 else :
