@@ -7,7 +7,10 @@ You may assume nums1 and nums2 cannot be both empty.
 '''
 
 class Solution:
-
+    
+    # Read the Leetcode solution editorial based of a mathematical solution where the basic notion of a median is used
+    # Implement that later
+    
     # Have two pointers to the two lists beginning , compare both of them and add min element to new list
     # At the same time checking for the median element since we know it's position already in (m+n) final array
     # complexity : worse case is O(m+n) , space = O(m+n)
