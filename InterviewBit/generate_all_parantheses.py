@@ -9,6 +9,8 @@ Return 0 / 1 ( 0 for false, 1 for true ) for this problem
 class Solution:
     # @param A : string
     # @return an integer
+    
+    # Use stack put opening symbols and for closing symbols pop and check
     def isValid(self, A):
         S = []
         B = {'}':'{',']':'[',')':'('}
