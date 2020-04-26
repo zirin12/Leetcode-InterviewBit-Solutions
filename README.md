@@ -1,2 +1,2 @@
 # Leetcode-InterviewBit-Solutions
-Solutions of leetcode and interviewbit problems for interview preparation
+Solutions of leetcode and interviewbit problems
