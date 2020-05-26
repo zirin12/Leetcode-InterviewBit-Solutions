@@ -43,3 +43,21 @@ def max_knapsack(curr_W,index):
     return max(included,not_included)
 '''
 print(max_knapsack(W,0))
+
+#Another Solution 
+#***********************************************************************************************************
+N,W = list(map(int,input().split()))
+v = list(map(int,input().split()))
+w = list(map(int,input().split()))
+
+# Dp solution using weights and indexes as states , simplified from 2d matrix to 1d array
+memo = [0 for i in range(W+1)]
+for j in range(W+1):
+    memo[j] = 0 if j < w[0] else v[0]
+
+for i in range(1,N):
+    for j in range(W,0,-1):
+        if j >= w[i] :
+            memo[j] = max(v[i] + memo[j-w[i]],memo[j])
+
+print(memo[W])
